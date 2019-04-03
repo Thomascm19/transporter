@@ -182,12 +182,12 @@ public class ViewEmpresa extends javax.swing.JFrame {
                         .addGap(121, 121, 121))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(BtnGuardarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(148, 148, 148))))
+                        .addGap(143, 143, 143))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
@@ -213,9 +213,9 @@ public class ViewEmpresa extends javax.swing.JFrame {
                 .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnGuardarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 400, 470));
@@ -242,7 +242,7 @@ public class ViewEmpresa extends javax.swing.JFrame {
             listaEmpresa[contador] = objEmpresa;
             contador++;
 
-            JOptionPane.showMessageDialog(this, "Empresa Registrada Con Exito!");
+            JOptionPane.showMessageDialog(this, "Empresa Agregada Con Exito");
         } else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
