@@ -2,66 +2,35 @@
 package proyecto01;
 
 
-public class Cliente {
-    
-    private String Cedula;
-    private String Nombre;
-    private String Direccion;
-    private String Telefono;
+public class Cliente extends Persona{
+       private int cantidadEquipaje;
+       private String tipoCliente;
 
     /**
-     * @return the Cedula
+     * @return the cantidadEquipaje
      */
-    public String getCedula() {
-        return Cedula;
+    public int getCantidadEquipaje() {
+        return cantidadEquipaje;
     }
 
     /**
-     * @param Cedula the Cedula to set
+     * @param cantidadEquipaje the cantidadEquipaje to set
      */
-    public void setCedula(String Cedula) {
-        this.Cedula = Cedula;
+    public void setCantidadEquipaje(int cantidadEquipaje) {
+        this.cantidadEquipaje = cantidadEquipaje;
     }
 
     /**
-     * @return the Nombre
+     * @return the tipoCliente
      */
-    public String getNombre() {
-        return Nombre;
+    public String getTipoCliente() {
+        return tipoCliente;
     }
 
     /**
-     * @param Nombre the Nombre to set
+     * @param tipoCliente the tipoCliente to set
      */
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setTipoCliente(String tipoCliente) {
+        this.tipoCliente = tipoCliente;
     }
-
-    /**
-     * @return the Direccion
-     */
-    public String getDireccion() {
-        return Direccion;
     }
-
-    /**
-     * @param Direccion the Direccion to set
-     */
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    /**
-     * @return the Telefono
-     */
-    public String getTelefono() {
-        return Telefono;
-    }
-
-    /**
-     * @param Telefono the Telefono to set
-     */
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
-    }
-}
