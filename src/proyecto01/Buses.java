@@ -2,7 +2,7 @@
 package proyecto01;
 
 
-public class Buses {
+public class Buses extends Empresa{
     private int sillasDisponibles;
     private String placa;
     private String tipoBus;
