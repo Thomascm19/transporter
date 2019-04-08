@@ -167,7 +167,7 @@ public class ViewBuses extends javax.swing.JFrame {
         });
         jPanel2.add(btnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 99, 34));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 480, 480));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 450, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
