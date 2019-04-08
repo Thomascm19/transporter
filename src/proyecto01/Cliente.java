@@ -4,7 +4,7 @@ package proyecto01;
 
 public class Cliente extends Persona{
        private int cantidadEquipaje;
-       private String tipoCliente;
+       private boolean tipoCliente;
 
     /**
      * @return the cantidadEquipaje
@@ -23,14 +23,14 @@ public class Cliente extends Persona{
     /**
      * @return the tipoCliente
      */
-    public String getTipoCliente() {
+    public boolean getTipoCliente() {
         return tipoCliente;
     }
 
     /**
      * @param tipoCliente the tipoCliente to set
      */
-    public void setTipoCliente(String tipoCliente) {
+    public void setTipoCliente(boolean tipoCliente) {
         this.tipoCliente = tipoCliente;
     }
     }
