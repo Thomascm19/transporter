@@ -3,24 +3,10 @@ package proyecto01;
 
 
 public class Buses extends Empresa{
-    private int sillasDisponibles;
     private String placa;
     private String tipoBus;
     private int distribucionSillas;
 
-    /**
-     * @return the sillasDisponibles
-     */
-    public int getSillasDisponibles() {
-        return sillasDisponibles;
-    }
-
-    /**
-     * @param sillasDisponibles the sillasDisponibles to set
-     */
-    public void setSillasDisponibles(int sillasDisponibles) {
-        this.sillasDisponibles = sillasDisponibles;
-    }
 
     /**
      * @return the placa

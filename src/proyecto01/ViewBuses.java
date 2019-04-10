@@ -11,11 +11,15 @@ package proyecto01;
  */
 public class ViewBuses extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewBuses
-     */
+    Buses[] listaBuses;
+    int contador;
     public ViewBuses() {
         initComponents();
+        //Se inicializa el arrelo
+        listaBuses = new Buses[10];
+        //Se inicializa el cotador 
+        contador = 0;
+        
     }
 
     /**
@@ -37,7 +41,7 @@ public class ViewBuses extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         btnOpcion2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        jcbTipo = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -101,15 +105,15 @@ public class ViewBuses extends javax.swing.JFrame {
         });
         jPanel2.add(btnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 99, 34));
 
-        jComboBox1.setBackground(new java.awt.Color(33, 45, 62));
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MicroBus", "Buseta", "AutoBus", "Artuculado" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcbTipo.setBackground(new java.awt.Color(33, 45, 62));
+        jcbTipo.setForeground(new java.awt.Color(204, 204, 204));
+        jcbTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MicroBus", "Buseta", "AutoBus", "Artuculado" }));
+        jcbTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jcbTipoActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 150, -1));
+        jPanel2.add(jcbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 150, -1));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +184,10 @@ public class ViewBuses extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpcion2ActionPerformed
 
     private void BtnGuardarBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBusActionPerformed
-        // TODO add your handling code here:
+       if(contador < listaBuses.length){
+           String placa = txtPlaca.getText();
+          // String tipo = jcbTipo.getSelectedItem();
+       }
     }//GEN-LAST:event_BtnGuardarBusActionPerformed
 
     private void btnOpcion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion3ActionPerformed
@@ -197,9 +204,9 @@ public class ViewBuses extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnOpcion1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jcbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jcbTipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,7 +249,6 @@ public class ViewBuses extends javax.swing.JFrame {
     private javax.swing.JButton btnOpcion2;
     private javax.swing.JButton btnOpcion3;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -254,6 +260,7 @@ public class ViewBuses extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JComboBox jcbTipo;
     private javax.swing.JTextField txtPlaca;
     // End of variables declaration//GEN-END:variables
 }
