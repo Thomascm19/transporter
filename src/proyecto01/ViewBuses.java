@@ -11,6 +11,7 @@ package proyecto01;
  */
 public class ViewBuses extends javax.swing.JFrame {
 
+    
     Buses[] listaBuses;
     int contador;
     public ViewBuses() {
@@ -19,6 +20,7 @@ public class ViewBuses extends javax.swing.JFrame {
         listaBuses = new Buses[10];
         //Se inicializa el cotador 
         contador = 0;
+      
         
     }
 
@@ -41,11 +43,9 @@ public class ViewBuses extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         btnOpcion2 = new javax.swing.JButton();
-        jcbTipo = new javax.swing.JComboBox();
-        jLabel6 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        jrbOpcion1 = new javax.swing.JRadioButton();
+        jrbOpcion2 = new javax.swing.JRadioButton();
+        jrbOpcion3 = new javax.swing.JRadioButton();
         BtnGuardarBus = new javax.swing.JButton();
         btnOpcion3 = new javax.swing.JButton();
         btnOpcion1 = new javax.swing.JButton();
@@ -71,19 +71,19 @@ public class ViewBuses extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Distrubucion y Cantidad De Sillas");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Placa");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
 
         txtPlaca.setBackground(new java.awt.Color(33, 45, 62));
         txtPlaca.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         txtPlaca.setForeground(new java.awt.Color(255, 255, 255));
         txtPlaca.setBorder(null);
         txtPlaca.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 150, -1));
+        jPanel2.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,7 +91,7 @@ public class ViewBuses extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         jSeparator2.setBackground(new java.awt.Color(73, 181, 172));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 150, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 150, 10));
 
         btnOpcion2.setBackground(new java.awt.Color(73, 181, 172));
         btnOpcion2.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -103,37 +103,22 @@ public class ViewBuses extends javax.swing.JFrame {
                 btnOpcion2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 99, 34));
+        jPanel2.add(btnOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 99, 34));
 
-        jcbTipo.setBackground(new java.awt.Color(33, 45, 62));
-        jcbTipo.setForeground(new java.awt.Color(204, 204, 204));
-        jcbTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MicroBus", "Buseta", "AutoBus", "Artuculado" }));
-        jcbTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbTipoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jcbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 150, -1));
+        jrbOpcion1.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(jrbOpcion1);
+        jrbOpcion1.setText("MicroBus");
+        jPanel2.add(jrbOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Tipo De Bus");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+        jrbOpcion2.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(jrbOpcion2);
+        jrbOpcion2.setText("Buseta");
+        jPanel2.add(jrbOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
 
-        jRadioButton1.setBackground(new java.awt.Color(33, 45, 62));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Opcion 1");
-        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
-
-        jRadioButton2.setBackground(new java.awt.Color(33, 45, 62));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Opcion 2");
-        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
-
-        jRadioButton3.setBackground(new java.awt.Color(33, 45, 62));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Opcion 3");
-        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+        jrbOpcion3.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(jrbOpcion3);
+        jrbOpcion3.setText("AutoBus");
+        jPanel2.add(jrbOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         BtnGuardarBus.setBackground(new java.awt.Color(73, 181, 172));
         BtnGuardarBus.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -145,7 +130,7 @@ public class ViewBuses extends javax.swing.JFrame {
                 BtnGuardarBusActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 99, 34));
+        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 99, 34));
 
         btnOpcion3.setBackground(new java.awt.Color(73, 181, 172));
         btnOpcion3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -157,7 +142,7 @@ public class ViewBuses extends javax.swing.JFrame {
                 btnOpcion3ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 99, 34));
+        jPanel2.add(btnOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 99, 34));
 
         btnOpcion1.setBackground(new java.awt.Color(73, 181, 172));
         btnOpcion1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -169,7 +154,7 @@ public class ViewBuses extends javax.swing.JFrame {
                 btnOpcion1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 99, 34));
+        jPanel2.add(btnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 99, 34));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 450, 480));
 
@@ -184,9 +169,28 @@ public class ViewBuses extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOpcion2ActionPerformed
 
     private void BtnGuardarBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBusActionPerformed
-       if(contador < listaBuses.length){
+        
+        if(contador < listaBuses.length){
            String placa = txtPlaca.getText();
-          // String tipo = jcbTipo.getSelectedItem();
+           /*
+           boolean distribucion1 = jrbOpcion1.isSelected();
+           boolean distribucion2 = jrbOpcion2.isSelected();
+           boolean distribucion3 = jrbOpcion3.isSelected();
+           */
+           if(jrbOpcion1.isSelected()==true){
+                int dis1[][] = new int[2][5];
+           }
+           /*else if(jrbOpcion2.isSelected()==true){
+               int dis2[][] = new int[2][8];
+           }else if(jrbOpcion3.isSelected()==true){
+               int dis3[][] = new int[2][10];
+           }
+           */
+           //Se crea el objeto
+            Buses objBuses = new Buses();
+            
+            objBuses.setPlaca(placa);
+            //objBuses.setDistribucionSillas(dis1);         
        }
     }//GEN-LAST:event_BtnGuardarBusActionPerformed
 
@@ -203,10 +207,6 @@ public class ViewBuses extends javax.swing.JFrame {
     open.setVisible(true);
 
     }//GEN-LAST:event_btnOpcion1ActionPerformed
-
-    private void jcbTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbTipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,15 +252,13 @@ public class ViewBuses extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JComboBox jcbTipo;
+    private javax.swing.JRadioButton jrbOpcion1;
+    private javax.swing.JRadioButton jrbOpcion2;
+    private javax.swing.JRadioButton jrbOpcion3;
     private javax.swing.JTextField txtPlaca;
     // End of variables declaration//GEN-END:variables
 }
