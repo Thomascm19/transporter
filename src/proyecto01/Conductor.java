@@ -3,25 +3,25 @@ package proyecto01;
 
 /**
  *
- * @author thoma
+ * @author Thomas y Felipe
  */
 public class Conductor extends Persona{
     
-    private int NumeroLicencia;
+    private String NumeroLicencia;
     private String Experiencia;
-    private int CodigoEmpresa;
+    private String  CodigoEmpresa;
 
     /**
      * @return the NumeroLicencia
      */
-    public int getNumeroLicencia() {
+    public String getNumeroLicencia() {
         return NumeroLicencia;
     }
 
     /**
      * @param NumeroLicencia the NumeroLicencia to set
      */
-    public void setNumeroLicencia(int NumeroLicencia) {
+    public void setNumeroLicencia(String NumeroLicencia) {
         this.NumeroLicencia = NumeroLicencia;
     }
 
@@ -42,14 +42,14 @@ public class Conductor extends Persona{
     /**
      * @return the CodigoEmpresa
      */
-    public int getCodigoEmpresa() {
+    public String getCodigoEmpresa() {
         return CodigoEmpresa;
     }
 
     /**
      * @param CodigoEmpresa the CodigoEmpresa to set
      */
-    public void setCodigoEmpresa(int CodigoEmpresa) {
+    public void setCodigoEmpresa(String CodigoEmpresa) {
         this.CodigoEmpresa = CodigoEmpresa;
     }
     

@@ -5,17 +5,24 @@
  */
 package proyecto01;
 
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author thoma
+ * @author Thomas y Felipe
  */
 public class ViewConductor extends javax.swing.JFrame {
+
+    Conductor[] ListaConductores;
+    int contador;
 
     /**
      * Creates new form ViewConductor
      */
     public ViewConductor() {
         initComponents();
+        ListaConductores = new Conductor[5];
+        contador = 0;
     }
 
     /**
@@ -35,26 +42,29 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
+        txtCodigoEmpresa = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        BtnGuardarCliente = new javax.swing.JButton();
+        BtnGuardarConductor = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtEquipaje = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        txtApellido1 = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox();
+        comboExperiencia = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        txtNumeroLicencia = new javax.swing.JTextField();
+        jSeparator9 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,19 +79,16 @@ public class ViewConductor extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 370, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(33, 33, 33))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 470));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 520));
 
         jPanel2.setBackground(new java.awt.Color(33, 45, 62));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,6 +105,11 @@ public class ViewConductor extends javax.swing.JFrame {
         txtCedula.setForeground(new java.awt.Color(255, 255, 255));
         txtCedula.setBorder(null);
         txtCedula.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaActionPerformed(evt);
+            }
+        });
         jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -117,12 +129,12 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel4.setText("Email");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
 
-        txtEmail.setBackground(new java.awt.Color(33, 45, 62));
-        txtEmail.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
-        txtEmail.setBorder(null);
-        txtEmail.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 150, -1));
+        txtCodigoEmpresa.setBackground(new java.awt.Color(33, 45, 62));
+        txtCodigoEmpresa.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtCodigoEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigoEmpresa.setBorder(null);
+        txtCodigoEmpresa.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtCodigoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,8 +150,8 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Registar Conductor");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
+        jLabel1.setText("Registrar Conductor");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 164, 150, 7));
@@ -150,17 +162,17 @@ public class ViewConductor extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 150, 10));
 
-        BtnGuardarCliente.setBackground(new java.awt.Color(73, 181, 172));
-        BtnGuardarCliente.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGuardarCliente.setText("GUARDAR");
-        BtnGuardarCliente.setBorder(null);
-        BtnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+        BtnGuardarConductor.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarConductor.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarConductor.setText("GUARDAR");
+        BtnGuardarConductor.setBorder(null);
+        BtnGuardarConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarClienteActionPerformed(evt);
+                BtnGuardarConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 99, 30));
+        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 99, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,23 +196,23 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Numero De Licencia");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
+        jLabel9.setText("Direccion");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
-        txtEquipaje.setBackground(new java.awt.Color(33, 45, 62));
-        txtEquipaje.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtEquipaje.setForeground(new java.awt.Color(255, 255, 255));
-        txtEquipaje.setBorder(null);
-        txtEquipaje.setCaretColor(new java.awt.Color(255, 255, 255));
-        txtEquipaje.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccion.setBackground(new java.awt.Color(33, 45, 62));
+        txtDireccion.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtDireccion.setForeground(new java.awt.Color(255, 255, 255));
+        txtDireccion.setBorder(null);
+        txtDireccion.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEquipajeActionPerformed(evt);
+                txtDireccionActionPerformed(evt);
             }
         });
-        jPanel2.add(txtEquipaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, 30));
+        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 150, 30));
 
         jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 150, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 150, 10));
 
         jSeparator7.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 150, 10));
@@ -208,34 +220,95 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Experiencia");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
-        txtApellido1.setBackground(new java.awt.Color(33, 45, 62));
-        txtApellido1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtApellido1.setForeground(new java.awt.Color(255, 255, 255));
-        txtApellido1.setBorder(null);
-        txtApellido1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 150, -1));
+        txtEmail.setBackground(new java.awt.Color(33, 45, 62));
+        txtEmail.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setBorder(null);
+        txtEmail.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 150, -1));
 
         jSeparator8.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 150, 10));
 
-        jComboBox1.setBackground(new java.awt.Color(33, 45, 62));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Año", "2 Años", "3 Anos", "4 Años" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, -1, -1));
+        comboExperiencia.setBackground(new java.awt.Color(33, 45, 62));
+        comboExperiencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Año a 5 Años", "6 Años a 10 Años", "11 Años a 15 Años", "16 Años o Mas..." }));
+        jPanel2.add(comboExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 650, 470));
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Numero De Licencia");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
+
+        txtNumeroLicencia.setBackground(new java.awt.Color(33, 45, 62));
+        txtNumeroLicencia.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtNumeroLicencia.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumeroLicencia.setBorder(null);
+        txtNumeroLicencia.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtNumeroLicencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroLicenciaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtNumeroLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, 30));
+
+        jSeparator9.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 150, 10));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 650, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
-       
-    }//GEN-LAST:event_BtnGuardarClienteActionPerformed
+    private void BtnGuardarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarConductorActionPerformed
 
-    private void txtEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEquipajeActionPerformed
+        if (contador < ListaConductores.length) {
+            String Cedula = txtCedula.getText();
+            String Nombre = txtNombre.getText();
+            String Apellido = txtApellido.getText();
+            String Direccion = txtDireccion.getText();
+            String Telefono = txtTelefono.getText();
+            String Email = txtEmail.getText();
+            String NumeroLicencia = txtDireccion.getText();
+            String Experiencia = comboExperiencia.getSelectedItem().toString();
+            String CodigoEmpresa = txtCodigoEmpresa.getText();
+
+            Conductor objCon = new Conductor();
+            ListaConductores[contador] = objCon;
+            contador++;
+            
+            JOptionPane.showMessageDialog(this, "Van "+ contador+ " Conductores y Los datos fueron Capturados");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "ERRROR LOS CONDUCTORES ESTAN COMPLETOS");
+            
+        }
+        Limpiar();
+    }//GEN-LAST:event_BtnGuardarConductorActionPerformed
+
+    public void Limpiar() {
+        txtNombre.setText("");
+        txtApellido.setText("");
+        comboExperiencia.setSelectedIndex(0);
+        txtCedula.setText("");
+        txtCodigoEmpresa.setText("");
+        txtDireccion.setText("");
+        txtEmail.setText("");
+        txtNumeroLicencia.setText("");
+        txtTelefono.setText("");
+    }
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEquipajeActionPerformed
+    }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaActionPerformed
+
+    private void txtNumeroLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroLicenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroLicenciaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,16 +324,24 @@ public class ViewConductor extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewConductor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConductor.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewConductor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConductor.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewConductor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConductor.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewConductor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConductor.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -273,10 +354,11 @@ public class ViewConductor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnGuardarCliente;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton BtnGuardarConductor;
+    private javax.swing.JComboBox comboExperiencia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -294,12 +376,14 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtApellido1;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodigoEmpresa;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEquipaje;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNumeroLicencia;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
