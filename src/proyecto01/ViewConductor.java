@@ -49,7 +49,7 @@ public class ViewConductor extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        BtnGuardarConductor = new javax.swing.JButton();
+        BtnBuscarConductor = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
@@ -65,6 +65,8 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         txtNumeroLicencia = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
+        BtnGuardarConductor = new javax.swing.JButton();
+        BtnEliminarConductor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,8 +86,9 @@ public class ViewConductor extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 520));
@@ -162,17 +165,17 @@ public class ViewConductor extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 150, 10));
 
-        BtnGuardarConductor.setBackground(new java.awt.Color(73, 181, 172));
-        BtnGuardarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnGuardarConductor.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGuardarConductor.setText("GUARDAR");
-        BtnGuardarConductor.setBorder(null);
-        BtnGuardarConductor.addActionListener(new java.awt.event.ActionListener() {
+        BtnBuscarConductor.setBackground(new java.awt.Color(73, 181, 172));
+        BtnBuscarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnBuscarConductor.setForeground(new java.awt.Color(255, 255, 255));
+        BtnBuscarConductor.setText("BUSCAR");
+        BtnBuscarConductor.setBorder(null);
+        BtnBuscarConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarConductorActionPerformed(evt);
+                BtnBuscarConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 99, 30));
+        jPanel2.add(BtnBuscarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 99, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -256,36 +259,38 @@ public class ViewConductor extends javax.swing.JFrame {
         jSeparator9.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 150, 10));
 
+        BtnGuardarConductor.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarConductor.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarConductor.setText("GUARDAR");
+        BtnGuardarConductor.setBorder(null);
+        BtnGuardarConductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarConductorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 99, 30));
+
+        BtnEliminarConductor.setBackground(new java.awt.Color(73, 181, 172));
+        BtnEliminarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnEliminarConductor.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminarConductor.setText("ELIMINAR");
+        BtnEliminarConductor.setBorder(null);
+        BtnEliminarConductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarConductorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnEliminarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 99, 30));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 650, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnGuardarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarConductorActionPerformed
-
-        if (contador < ListaConductores.length) {
-            String Cedula = txtCedula.getText();
-            String Nombre = txtNombre.getText();
-            String Apellido = txtApellido.getText();
-            String Direccion = txtDireccion.getText();
-            String Telefono = txtTelefono.getText();
-            String Email = txtEmail.getText();
-            String NumeroLicencia = txtDireccion.getText();
-            String Experiencia = comboExperiencia.getSelectedItem().toString();
-            String CodigoEmpresa = txtCodigoEmpresa.getText();
-
-            Conductor objCon = new Conductor();
-            ListaConductores[contador] = objCon;
-            contador++;
-            
-            JOptionPane.showMessageDialog(this, "Van "+ contador+ " Conductores y Los datos fueron Capturados");
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "ERRROR LOS CONDUCTORES ESTAN COMPLETOS");
-            
-        }
-        Limpiar();
-    }//GEN-LAST:event_BtnGuardarConductorActionPerformed
+    private void BtnBuscarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarConductorActionPerformed
+         
+    }//GEN-LAST:event_BtnBuscarConductorActionPerformed
 
     public void Limpiar() {
         txtNombre.setText("");
@@ -309,6 +314,46 @@ public class ViewConductor extends javax.swing.JFrame {
     private void txtNumeroLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroLicenciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroLicenciaActionPerformed
+
+    private void BtnGuardarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarConductorActionPerformed
+        if (contador < ListaConductores.length) {
+            String Cedula = txtCedula.getText();
+            String Nombre = txtNombre.getText();
+            String Apellido = txtApellido.getText();
+            String Direccion = txtDireccion.getText();
+            String Telefono = txtTelefono.getText();
+            String Email = txtEmail.getText();
+            String NumeroLicencia = txtDireccion.getText();
+            String Experiencia = comboExperiencia.getSelectedItem().toString();
+            String CodigoEmpresa = txtCodigoEmpresa.getText();
+
+            Conductor objCon = new Conductor();
+            
+            objCon.setCedula(Cedula);
+            objCon.setNombre(Nombre);            
+            objCon.setApellido(Apellido);
+            objCon.setDireccion(Direccion);
+            objCon.setTelefono(Telefono);
+            objCon.setEmail(Email);
+            objCon.setNumeroLicencia(NumeroLicencia);
+            objCon.setExperiencia(Experiencia);
+            objCon.setCodigoEmpresa(CodigoEmpresa);
+            
+            ListaConductores[contador] = objCon;
+            contador++;
+            
+            JOptionPane.showMessageDialog(this, "Van "+ contador+ " Conductores y Los datos fueron Capturados");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "ERRROR LOS CONDUCTORES ESTAN COMPLETOS");
+            
+        }
+        Limpiar();
+    }//GEN-LAST:event_BtnGuardarConductorActionPerformed
+
+    private void BtnEliminarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarConductorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEliminarConductorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +399,8 @@ public class ViewConductor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBuscarConductor;
+    private javax.swing.JButton BtnEliminarConductor;
     private javax.swing.JButton BtnGuardarConductor;
     private javax.swing.JComboBox comboExperiencia;
     private javax.swing.JLabel jLabel1;
