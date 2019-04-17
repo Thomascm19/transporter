@@ -2,13 +2,12 @@ package proyecto01;
 
 import javax.swing.JOptionPane;
 
-
 public class ViewCliente extends javax.swing.JFrame {
 
-     Cliente[] listaCliente;
+    Cliente[] listaCliente;
 
     int contador;
-    
+
     public ViewCliente() {
         initComponents();
         //Se inicializa el arrelo
@@ -53,6 +52,7 @@ public class ViewCliente extends javax.swing.JFrame {
         txtEquipaje = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
+        btnVolverCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,7 +144,7 @@ public class ViewCliente extends javax.swing.JFrame {
                 BtnGuardarClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 99, 30));
+        jPanel2.add(BtnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,7 +183,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Tipo De Cliente");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
         txtEquipaje.setBackground(new java.awt.Color(33, 45, 62));
         txtEquipaje.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -198,42 +198,62 @@ public class ViewCliente extends javax.swing.JFrame {
         jSeparator7.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 150, 10));
 
+        btnVolverCliente.setBackground(new java.awt.Color(73, 181, 172));
+        btnVolverCliente.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        btnVolverCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolverCliente.setText("x");
+        btnVolverCliente.setBorder(null);
+        btnVolverCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverClienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVolverCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 0, 30, 30));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 550, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
-           if (contador < listaCliente.length) {
+        if (contador < listaCliente.length) {
             String cedula = txtCedula.getText();
             String nombre = txtNombre.getText();
-            String apellido = txtApellido.getText();                      
+            String apellido = txtApellido.getText();
             String email = txtEmail.getText();
             String telefono = txtTelefono.getText();
             boolean tipo = rbtEstandar.isSelected();
-            int equipaje = Integer.parseInt(txtEquipaje.getText()); 
-            
-            
+            int equipaje = Integer.parseInt(txtEquipaje.getText());
 
             //Se crea el objeto
             Cliente objCliente = new Cliente();
 
             objCliente.setCedula(cedula);
-            objCliente.setNombre(nombre);            
+            objCliente.setNombre(nombre);
             objCliente.setApellido(apellido);
             objCliente.setEmail(email);
             objCliente.setTelefono(telefono);
             objCliente.setTipoCliente(tipo);
             objCliente.setCantidadEquipaje(equipaje);
-                        
+
             listaCliente[contador] = objCliente;
             contador++;
 
-            JOptionPane.showMessageDialog(this, "Van " + contador + " Clientes.");
+            JOptionPane.showMessageDialog(this, "Te Has Registrado Con Exito");
         } else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
+        ViewCompra open = new ViewCompra();
+        open.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarClienteActionPerformed
+
+    private void btnVolverClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverClienteActionPerformed
+        ViewPrincipal open = new ViewPrincipal();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVolverClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,6 +292,7 @@ public class ViewCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardarCliente;
+    private javax.swing.JButton btnVolverCliente;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
