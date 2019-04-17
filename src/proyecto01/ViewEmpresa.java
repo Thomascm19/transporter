@@ -1,19 +1,16 @@
-
 package proyecto01;
 
 import javax.swing.JOptionPane;
 
-
 public class ViewEmpresa extends javax.swing.JFrame {
-    
+
     Empresa[] listaEmpresa;
 
     int contador;
-    
+
     public ViewEmpresa() {
         initComponents();
-        
-        
+
         //Se inicializa el arrelo
         listaEmpresa = new Empresa[1];
         //Se inicializa el cotador 
@@ -225,20 +222,55 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
     private void BtnGuardarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarEmpresaActionPerformed
         if (contador < listaEmpresa.length) {
-            String nit = txtNit.getText();
-            String nombre = txtNombre.getText();
-            String direccion = txtDireccion.getText();           
-            String telefono = txtTelefono.getText();           
-            
+            Empresa objEmpresa = new Empresa() {
 
-            //Se crea el objeto
-            Empresa objEmpresa = new Empresa();
+                String nit = txtNit.getText();
+                String nombre = txtNombre.getText();
+                String direccion = txtDireccion.getText();
+                String telefono = txtTelefono.getText();
 
-            objEmpresa.setNit(nit);
-            objEmpresa.setNombre(nombre);
-            objEmpresa.setDireccion(direccion);
-            objEmpresa.setTelefono(telefono);
-                        
+                //Se crea el objeto
+                @Override
+                public void setNit(String nit) {
+                    this.nit = nit;
+                }
+
+                @Override
+                public String getNit() {
+                    return this.nit;
+                }
+
+                @Override
+                public void setNombre(String nombre) {
+                    this.nombre = nombre;
+                }
+
+                @Override
+                public String getNombre() {
+                    return this.nombre;
+                }
+
+                @Override
+                public void setDireccion(String direccion) {
+                    this.direccion = direccion;
+                }
+
+                @Override
+                public String getDireccion() {
+                    return this.direccion;
+                }
+
+                @Override
+                public void setTelefono(String telefono) {
+                    this.telefono = telefono;
+                }
+
+                @Override
+                public String getTelefono() {
+                    return this.telefono;
+                }
+            };
+
             listaEmpresa[contador] = objEmpresa;
             contador++;
 
