@@ -4,7 +4,7 @@ package proyecto01;
  *
  * @author thoma
  */
-public class Reserva extends Cliente{
+public class Reserva extends Compra{
     private String fechaReserva;
 
     /**

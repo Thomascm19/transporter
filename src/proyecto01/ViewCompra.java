@@ -5,17 +5,24 @@
  */
 package proyecto01;
 
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thoma
  */
 public class ViewCompra extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewCompra
-     */
+    Compra[] listaCompra;
+
+    int contador;
+
     public ViewCompra() {
         initComponents();
+
+        listaCompra = new Compra[10];
+        contador = 0;
     }
 
     /**
@@ -27,22 +34,21 @@ public class ViewCompra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        BtnGuardarCliente = new javax.swing.JButton();
-        rbtEstandar = new javax.swing.JRadioButton();
-        rbtVip = new javax.swing.JRadioButton();
+        BtbGuardarCompra = new javax.swing.JButton();
+        rbtDebito = new javax.swing.JRadioButton();
+        rbtCredito = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         btnVolverCompra = new javax.swing.JButton();
-        rbtEstandar1 = new javax.swing.JRadioButton();
+        rbtEfectivo = new javax.swing.JRadioButton();
+        jDateCompra = new com.toedter.calendar.JDateChooser();
+        SpinnerSillas = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,64 +73,46 @@ public class ViewCompra extends javax.swing.JFrame {
         jLabel2.setText("Fecha De Salida");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
-        txtCedula.setBackground(new java.awt.Color(33, 45, 62));
-        txtCedula.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtCedula.setForeground(new java.awt.Color(255, 255, 255));
-        txtCedula.setBorder(null);
-        txtCedula.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 150, -1));
-
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Seleccione Su N° De Silla");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
-
-        txtNombre.setBackground(new java.awt.Color(33, 45, 62));
-        txtNombre.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombre.setBorder(null);
-        txtNombre.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 150, 20));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Realiza Tu Compra");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
-        jSeparator1.setBackground(new java.awt.Color(73, 181, 172));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, 7));
-
-        jSeparator2.setBackground(new java.awt.Color(73, 181, 172));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 150, 10));
-
-        BtnGuardarCliente.setBackground(new java.awt.Color(73, 181, 172));
-        BtnGuardarCliente.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGuardarCliente.setText("GUARDAR");
-        BtnGuardarCliente.setBorder(null);
-        BtnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+        BtbGuardarCompra.setBackground(new java.awt.Color(73, 181, 172));
+        BtbGuardarCompra.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtbGuardarCompra.setForeground(new java.awt.Color(255, 255, 255));
+        BtbGuardarCompra.setText("GUARDAR");
+        BtbGuardarCompra.setBorder(null);
+        BtbGuardarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarClienteActionPerformed(evt);
+                BtbGuardarCompraActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 90, 30));
+        jPanel2.add(BtbGuardarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 90, 30));
 
-        rbtEstandar.setBackground(new java.awt.Color(33, 45, 62));
-        rbtEstandar.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        rbtEstandar.setForeground(new java.awt.Color(255, 255, 255));
-        rbtEstandar.setText("Tarjeta De Debito");
-        rbtEstandar.addActionListener(new java.awt.event.ActionListener() {
+        rbtDebito.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(rbtDebito);
+        rbtDebito.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        rbtDebito.setForeground(new java.awt.Color(255, 255, 255));
+        rbtDebito.setText("Tarjeta De Debito");
+        rbtDebito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtEstandarActionPerformed(evt);
+                rbtDebitoActionPerformed(evt);
             }
         });
-        jPanel2.add(rbtEstandar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+        jPanel2.add(rbtDebito, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
 
-        rbtVip.setBackground(new java.awt.Color(33, 45, 62));
-        rbtVip.setFont(new java.awt.Font("Yu Gothic Light", 1, 12)); // NOI18N
-        rbtVip.setForeground(new java.awt.Color(255, 255, 255));
-        rbtVip.setText("Tarjeta De Credito");
-        jPanel2.add(rbtVip, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        rbtCredito.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(rbtCredito);
+        rbtCredito.setFont(new java.awt.Font("Yu Gothic Light", 1, 12)); // NOI18N
+        rbtCredito.setForeground(new java.awt.Color(255, 255, 255));
+        rbtCredito.setText("Tarjeta De Credito");
+        jPanel2.add(rbtCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,20 +131,50 @@ public class ViewCompra extends javax.swing.JFrame {
         });
         jPanel2.add(btnVolverCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 0, 30, 30));
 
-        rbtEstandar1.setBackground(new java.awt.Color(33, 45, 62));
-        rbtEstandar1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
-        rbtEstandar1.setForeground(new java.awt.Color(255, 255, 255));
-        rbtEstandar1.setText("Efectivo");
-        jPanel2.add(rbtEstandar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+        rbtEfectivo.setBackground(new java.awt.Color(33, 45, 62));
+        buttonGroup1.add(rbtEfectivo);
+        rbtEfectivo.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        rbtEfectivo.setForeground(new java.awt.Color(255, 255, 255));
+        rbtEfectivo.setText("Efectivo");
+        jPanel2.add(rbtEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+
+        jDateCompra.setBackground(new java.awt.Color(33, 45, 62));
+        jDateCompra.setForeground(new java.awt.Color(51, 51, 255));
+        jPanel2.add(jDateCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, -1));
+        jPanel2.add(SpinnerSillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 150, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 550, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
-       
-    }//GEN-LAST:event_BtnGuardarClienteActionPerformed
+    private void BtbGuardarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtbGuardarCompraActionPerformed
+        Date fecha = new Date();
+        if (contador < listaCompra.length) {
+            Date fechaIda = jDateCompra.getDate();
+            int sillas = Integer.parseInt(SpinnerSillas.getValue().toString());
+            String seleccionPago = "";
+            Date fechaCompra = fecha;
+
+            if (rbtEfectivo.isSelected()) {
+                seleccionPago = rbtEfectivo.getText();
+            } else if (rbtDebito.isSelected()) {
+                seleccionPago = rbtDebito.getText();
+            } else {
+                seleccionPago = rbtCredito.getText();
+            }
+            //Se crea el objeto
+            Compra objCompra = new Compra(fechaIda, fechaCompra, sillas, seleccionPago);
+
+            listaCompra[contador] = objCompra;
+            contador++;
+
+            JOptionPane.showMessageDialog(this, "Se Ha Realizado La Compra Con Exito!!");
+            JOptionPane.showMessageDialog(this, "Por Favor Copie Este Recibo De Pago: \n" + "Fecha De Compra: " + objCompra.getFechaCompra()+ "\n" + "Su Silla es: " + objCompra.getnSilla() + "\n" + "Su Pago Se Realizo Con: " + objCompra.getPago()+ "\n"+"La Fecha De Salida Es: "+ objCompra.getFecha_ida());
+        } else {
+            JOptionPane.showMessageDialog(this, "Error Contacte Con El Administrador", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BtbGuardarCompraActionPerformed
 
     private void btnVolverCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCompraActionPerformed
         ViewCliente open = new ViewCliente();
@@ -164,9 +182,9 @@ public class ViewCompra extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnVolverCompraActionPerformed
 
-    private void rbtEstandarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtEstandarActionPerformed
+    private void rbtDebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDebitoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbtEstandarActionPerformed
+    }//GEN-LAST:event_rbtDebitoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,8 +222,11 @@ public class ViewCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnGuardarCliente;
+    private javax.swing.JButton BtbGuardarCompra;
+    private javax.swing.JSpinner SpinnerSillas;
     private javax.swing.JButton btnVolverCompra;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private com.toedter.calendar.JDateChooser jDateCompra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -213,12 +234,8 @@ public class ViewCompra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JRadioButton rbtEstandar;
-    private javax.swing.JRadioButton rbtEstandar1;
-    private javax.swing.JRadioButton rbtVip;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JRadioButton rbtCredito;
+    private javax.swing.JRadioButton rbtDebito;
+    private javax.swing.JRadioButton rbtEfectivo;
     // End of variables declaration//GEN-END:variables
 }

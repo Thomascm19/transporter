@@ -10,9 +10,9 @@ public class ViewCliente extends javax.swing.JFrame {
 
     public ViewCliente() {
         initComponents();
-        //Se inicializa el arrelo
+        //Se inicializa el arreglo
         listaCliente = new Cliente[10];
-        //Se inicializa el cotador 
+        //Se inicializa el contador 
         contador = 0;
     }
 
@@ -226,15 +226,7 @@ public class ViewCliente extends javax.swing.JFrame {
             int equipaje = Integer.parseInt(txtEquipaje.getText());
 
             //Se crea el objeto
-            Cliente objCliente = new Cliente();
-
-            objCliente.setCedula(cedula);
-            objCliente.setNombre(nombre);
-            objCliente.setApellido(apellido);
-            objCliente.setEmail(email);
-            objCliente.setTelefono(telefono);
-            objCliente.setTipoCliente(tipo);
-            objCliente.setCantidadEquipaje(equipaje);
+            Cliente objCliente = new Cliente(equipaje, tipo, cedula, nombre, apellido, telefono, email);
 
             listaCliente[contador] = objCliente;
             contador++;
