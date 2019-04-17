@@ -10,6 +10,14 @@ public class Conductor extends Persona{
     private int NumeroLicencia;
     private String Experiencia;
     private int CodigoEmpresa;
+    
+ 
+    public Conductor(int NumeroLicencia,String Experiencia,int CodigoEmpresa, String cedula, String nombre, String apellido, String telefono, String email) {
+        super(cedula,nombre,apellido,telefono,email);
+        this.NumeroLicencia = NumeroLicencia;
+        this.Experiencia = Experiencia;
+        this.CodigoEmpresa = CodigoEmpresa;
+    }
 
     /**
      * @return the NumeroLicencia

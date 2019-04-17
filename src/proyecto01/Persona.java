@@ -1,95 +1,89 @@
 package proyecto01;
 
 public class Persona {
-    
-    private String Cedula;
-    private String Nombre;
-    private String Apellido;
-    private String Direccion;
-    private String Telefono;
-    private String Email;
+
+    private String cedula;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String email;
+
+    public Persona(String cedula, String nombre, String apellido, String telefono, String email) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.email = email;
+
+    }
 
     /**
-     * @return the Cedula
+     * @return the cedula
      */
     public String getCedula() {
-        return Cedula;
+        return cedula;
     }
 
     /**
-     * @param Cedula the Cedula to set
+     * @param cedula the cedula to set
      */
-    public void setCedula(String Cedula) {
-        this.Cedula = Cedula;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     /**
-     * @return the Nombre
+     * @return the nombre
      */
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     /**
-     * @param Nombre the Nombre to set
+     * @param nombre the nombre to set
      */
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     /**
-     * @return the Apellido
+     * @return the apellido
      */
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
     /**
-     * @param Apellido the Apellido to set
+     * @param apellido the apellido to set
      */
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
-
     /**
-     * @return the Direccion
-     */
-    public String getDireccion() {
-        return Direccion;
-    }
-
-    /**
-     * @param Direccion the Direccion to set
-     */
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    /**
-     * @return the Telefono
+     * @return the telefono
      */
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
     /**
-     * @param Telefono the Telefono to set
+     * @param telefono the telefono to set
      */
-    public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     /**
-     * @return the Email
+     * @return the email
      */
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     /**
-     * @param Email the Email to set
+     * @param email the email to set
      */
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
 }
