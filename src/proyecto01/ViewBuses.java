@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto01;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,17 +8,20 @@ package proyecto01;
  */
 public class ViewBuses extends javax.swing.JFrame {
 
-    
     Buses[] listaBuses;
     int contador;
+    int[][] distribucionSillas1 = new int[2][8];
+    int[][] distribucionSillas2 = new int[2][10];
+    int[][] distribucionSillas3 = new int[2][15];
+
     public ViewBuses() {
         initComponents();
+
         //Se inicializa el arrelo
         listaBuses = new Buses[10];
         //Se inicializa el cotador 
         contador = 0;
-      
-        
+
     }
 
     /**
@@ -49,6 +49,7 @@ public class ViewBuses extends javax.swing.JFrame {
         BtnGuardarBus = new javax.swing.JButton();
         btnOpcion3 = new javax.swing.JButton();
         btnOpcion1 = new javax.swing.JButton();
+        BtnGuardarBus1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,6 +109,11 @@ public class ViewBuses extends javax.swing.JFrame {
         jrbOpcion1.setBackground(new java.awt.Color(33, 45, 62));
         buttonGroup1.add(jrbOpcion1);
         jrbOpcion1.setText("MicroBus");
+        jrbOpcion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbOpcion1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jrbOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         jrbOpcion2.setBackground(new java.awt.Color(33, 45, 62));
@@ -130,7 +136,7 @@ public class ViewBuses extends javax.swing.JFrame {
                 BtnGuardarBusActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 99, 34));
+        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 99, 34));
 
         btnOpcion3.setBackground(new java.awt.Color(73, 181, 172));
         btnOpcion3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -156,57 +162,160 @@ public class ViewBuses extends javax.swing.JFrame {
         });
         jPanel2.add(btnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 99, 34));
 
+        BtnGuardarBus1.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarBus1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarBus1.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarBus1.setText("x");
+        BtnGuardarBus1.setBorder(null);
+        BtnGuardarBus1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarBus1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnGuardarBus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 30, 34));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 450, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOpcion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion2ActionPerformed
-       
-    ViewOpcion1 open = new ViewOpcion1();
-    open.setVisible(true);
+
+        ViewOpcion1 open = new ViewOpcion1();
+        open.setVisible(true);
 
     }//GEN-LAST:event_btnOpcion2ActionPerformed
 
     private void BtnGuardarBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBusActionPerformed
-        
-        if(contador < listaBuses.length){
-           String placa = txtPlaca.getText();
-           /*
-           boolean distribucion1 = jrbOpcion1.isSelected();
-           boolean distribucion2 = jrbOpcion2.isSelected();
-           boolean distribucion3 = jrbOpcion3.isSelected();
-           */
-           if(jrbOpcion1.isSelected()==true){
-                int dis1[][] = new int[2][5];
-           }
-           /*else if(jrbOpcion2.isSelected()==true){
-               int dis2[][] = new int[2][8];
-           }else if(jrbOpcion3.isSelected()==true){
-               int dis3[][] = new int[2][10];
-           }
-           */
-           //Se crea el objeto
-            Buses objBuses = new Buses();
+
+        if (contador < listaBuses.length) {
+
+            //Se crea el objeto
+            Buses objBuses = new Buses() {
+                String placa = txtPlaca.getText();
+                int distribucionSillas[][];
+
+                @Override
+                public void setPlaca(String placa) {
+                    this.placa = placa;
+                }
+
+                @Override
+                public String getPlaca() {
+                    return this.placa;
+                }
+
+                @Override
+                public void setDistribucionSillas(int[][] distribucionSillas) {
+                    this.distribucionSillas = distribucionSillas;
+                }
+
+                @Override
+                public int[][] getDistribucionSillas() {
+                    return this.distribucionSillas;
+                }
+
+                @Override
+                public void setNit(String nit) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public String getNit() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void setNombre(String nombre) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public String getNombre() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void setDireccion(String direccion) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public String getDireccion() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void setTelefono(String telefono) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public String getTelefono() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            if (jrbOpcion1.isSelected()) {
+                objBuses.setDistribucionSillas(distribucionSillas1);
+            } else if (jrbOpcion2.isSelected()) {
+                objBuses.setDistribucionSillas(distribucionSillas2);
+            } else {
+                objBuses.setDistribucionSillas(distribucionSillas3);
+            }
+            listaBuses[contador] = objBuses;
+            contador++;
             
-            objBuses.setPlaca(placa);
-            //objBuses.setDistribucionSillas(dis1);         
-       }
+            JOptionPane.showMessageDialog(this, "Transporte Agregado Con Exito");            
+        }else {
+            JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+         ViewConductor open = new ViewConductor();
+        open.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarBusActionPerformed
 
     private void btnOpcion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion3ActionPerformed
-              
-    ViewOpcion2 open = new ViewOpcion2();
-    open.setVisible(true);
+
+        ViewOpcion2 open = new ViewOpcion2();
+        open.setVisible(true);
 
     }//GEN-LAST:event_btnOpcion3ActionPerformed
 
     private void btnOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion1ActionPerformed
-              
-    ViewOpcion3 open = new ViewOpcion3();
-    open.setVisible(true);
+
+        ViewOpcion3 open = new ViewOpcion3();
+        open.setVisible(true);
 
     }//GEN-LAST:event_btnOpcion1ActionPerformed
+
+    /*
+    
+    Boton de busqueda
+   boolean existe = false;
+        String buscar = JOptionPane.showInputDialog(this, "Ingrese la placa: ");
+
+        for (int i = 0; i <= listaBuses.length; i++) {
+            if (listaBuses[i].getPlaca().equals((buscar))) {
+                JOptionPane.showMessageDialog(this, "La placa es: " + listaBuses[i].getDistribucionSillas());
+
+                existe = true;
+            }
+        }
+        if (!existe) {
+            JOptionPane.showMessageDialog(this, "No se encontro la placa");
+        } 
+    
+   
+    */
+    private void jrbOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbOpcion1ActionPerformed
+
+    }//GEN-LAST:event_jrbOpcion1ActionPerformed
+
+    private void BtnGuardarBus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBus1ActionPerformed
+       ViewEmpresa open = new ViewEmpresa();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnGuardarBus1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +354,7 @@ public class ViewBuses extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardarBus;
+    private javax.swing.JButton BtnGuardarBus1;
     private javax.swing.JButton btnOpcion1;
     private javax.swing.JButton btnOpcion2;
     private javax.swing.JButton btnOpcion3;

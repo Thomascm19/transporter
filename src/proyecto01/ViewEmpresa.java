@@ -1,19 +1,16 @@
-
 package proyecto01;
 
 import javax.swing.JOptionPane;
 
-
 public class ViewEmpresa extends javax.swing.JFrame {
-    
+
     Empresa[] listaEmpresa;
 
     int contador;
-    
+
     public ViewEmpresa() {
         initComponents();
-        
-        
+
         //Se inicializa el arrelo
         listaEmpresa = new Empresa[1];
         //Se inicializa el cotador 
@@ -47,6 +44,7 @@ public class ViewEmpresa extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         BtnGuardarEmpresa = new javax.swing.JButton();
+        BtnGuardarEmpresa1 = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -57,83 +55,83 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(73, 181, 172));
         jPanel1.setPreferredSize(new java.awt.Dimension(370, 470));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto01/img/Logo.png"))); // NOI18N
         jLabel8.setText("jLabel8");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(33, 33, 33))
-        );
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 362, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 470));
 
         jPanel2.setBackground(new java.awt.Color(33, 45, 62));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nit");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 117, -1, -1));
 
         txtNit.setBackground(new java.awt.Color(33, 45, 62));
         txtNit.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         txtNit.setForeground(new java.awt.Color(255, 255, 255));
         txtNit.setBorder(null);
         txtNit.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtNit, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 143, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 188, -1, -1));
 
         txtNombre.setBackground(new java.awt.Color(33, 45, 62));
         txtNombre.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setBorder(null);
         txtNombre.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 220, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Direccion");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 264, -1, -1));
 
         txtDireccion.setBackground(new java.awt.Color(33, 45, 62));
         txtDireccion.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         txtDireccion.setForeground(new java.awt.Color(255, 255, 255));
         txtDireccion.setBorder(null);
         txtDireccion.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 302, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Telefono");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 340, -1, -1));
 
         txtTelefono.setBackground(new java.awt.Color(33, 45, 62));
         txtTelefono.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(255, 255, 255));
         txtTelefono.setBorder(null);
         txtTelefono.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 372, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Regista Tu Empresa");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 51, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 169, 150, 7));
 
         jSeparator2.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 246, 150, 10));
 
         jSeparator3.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 323, 150, 10));
 
         jSeparator4.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 396, 150, 10));
 
         BtnGuardarEmpresa.setBackground(new java.awt.Color(73, 181, 172));
         BtnGuardarEmpresa.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -145,78 +143,19 @@ public class ViewEmpresa extends javax.swing.JFrame {
                 BtnGuardarEmpresaActionPerformed(evt);
             }
         });
+        jPanel2.add(BtnGuardarEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 99, 34));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(46, 46, 46))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNombre)
-                                .addComponent(txtNit)
-                                .addComponent(txtDireccion)
-                                .addComponent(txtTelefono)
-                                .addComponent(jSeparator1)
-                                .addComponent(jSeparator2)
-                                .addComponent(jSeparator3)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(121, 121, 121))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(BtnGuardarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(143, 143, 143))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnGuardarEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
+        BtnGuardarEmpresa1.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarEmpresa1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarEmpresa1.setText("x");
+        BtnGuardarEmpresa1.setBorder(null);
+        BtnGuardarEmpresa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarEmpresa1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnGuardarEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 30, 34));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 400, 470));
 
@@ -225,20 +164,56 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
     private void BtnGuardarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarEmpresaActionPerformed
         if (contador < listaEmpresa.length) {
-            String nit = txtNit.getText();
-            String nombre = txtNombre.getText();
-            String direccion = txtDireccion.getText();           
-            String telefono = txtTelefono.getText();           
-            
+             //Se crea el objeto
+            Empresa objEmpresa = new Empresa() {
 
-            //Se crea el objeto
-            Empresa objEmpresa = new Empresa();
+                String nit = txtNit.getText();
+                String nombre = txtNombre.getText();
+                String direccion = txtDireccion.getText();
+                String telefono = txtTelefono.getText();
 
-            objEmpresa.setNit(nit);
-            objEmpresa.setNombre(nombre);
-            objEmpresa.setDireccion(direccion);
-            objEmpresa.setTelefono(telefono);
-                        
+               
+                @Override
+                public void setNit(String nit) {
+                    this.nit = nit;
+                }
+
+                @Override
+                public String getNit() {
+                    return this.nit;
+                }
+
+                @Override
+                public void setNombre(String nombre) {
+                    this.nombre = nombre;
+                }
+
+                @Override
+                public String getNombre() {
+                    return this.nombre;
+                }
+
+                @Override
+                public void setDireccion(String direccion) {
+                    this.direccion = direccion;
+                }
+
+                @Override
+                public String getDireccion() {
+                    return this.direccion;
+                }
+
+                @Override
+                public void setTelefono(String telefono) {
+                    this.telefono = telefono;
+                }
+
+                @Override
+                public String getTelefono() {
+                    return this.telefono;
+                }
+            };
+
             listaEmpresa[contador] = objEmpresa;
             contador++;
 
@@ -246,8 +221,36 @@ public class ViewEmpresa extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        ViewBuses open = new ViewBuses();
+        open.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarEmpresaActionPerformed
 
+    private void BtnGuardarEmpresa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarEmpresa1ActionPerformed
+        ViewPrincipal open = new ViewPrincipal();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnGuardarEmpresa1ActionPerformed
+
+    /*
+    Codigo para buscar 
+        boolean existe = false;
+        String buscar = JOptionPane.showInputDialog(this, "Ingrese el nit: ");
+
+        for (int i = 0; i <= listaEmpresa.length; i++) {
+            if (listaEmpresa[i].getNit().equals((buscar))) {
+                JOptionPane.showMessageDialog(this, "El nit es " + listaEmpresa[i].getNit());
+
+                existe = true;
+            }
+        }
+        if (!existe) {
+            JOptionPane.showMessageDialog(this, "No se encontro la placa");
+        }
+    
+    */
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -286,6 +289,7 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardarEmpresa;
+    private javax.swing.JButton BtnGuardarEmpresa1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
