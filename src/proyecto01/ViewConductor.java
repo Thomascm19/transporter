@@ -5,17 +5,23 @@
  */
 package proyecto01;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thoma
  */
 public class ViewConductor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewConductor
-     */
+    Conductor[] listaConductor;
+
+    int contador;
+
     public ViewConductor() {
         initComponents();
+
+        listaConductor = new Conductor[10];
+        contador = 0;
     }
 
     /**
@@ -35,26 +41,27 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        BtnGuardarCliente = new javax.swing.JButton();
+        BtnGuardarConductor = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtEquipaje = new javax.swing.JTextField();
+        txtLicencia = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        txtApellido1 = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox();
+        SpinnerExp = new javax.swing.JSpinner();
+        BtnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -117,12 +124,12 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel4.setText("Email");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
 
-        txtEmail.setBackground(new java.awt.Color(33, 45, 62));
-        txtEmail.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
-        txtEmail.setBorder(null);
-        txtEmail.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 150, -1));
+        txtCodigo.setBackground(new java.awt.Color(33, 45, 62));
+        txtCodigo.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigo.setBorder(null);
+        txtCodigo.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,17 +157,17 @@ public class ViewConductor extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, 150, 10));
 
-        BtnGuardarCliente.setBackground(new java.awt.Color(73, 181, 172));
-        BtnGuardarCliente.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnGuardarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGuardarCliente.setText("GUARDAR");
-        BtnGuardarCliente.setBorder(null);
-        BtnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+        BtnGuardarConductor.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarConductor.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarConductor.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarConductor.setText("GUARDAR");
+        BtnGuardarConductor.setBorder(null);
+        BtnGuardarConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarClienteActionPerformed(evt);
+                BtnGuardarConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 99, 30));
+        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 99, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,17 +194,17 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel9.setText("Numero De Licencia");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
 
-        txtEquipaje.setBackground(new java.awt.Color(33, 45, 62));
-        txtEquipaje.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtEquipaje.setForeground(new java.awt.Color(255, 255, 255));
-        txtEquipaje.setBorder(null);
-        txtEquipaje.setCaretColor(new java.awt.Color(255, 255, 255));
-        txtEquipaje.addActionListener(new java.awt.event.ActionListener() {
+        txtLicencia.setBackground(new java.awt.Color(33, 45, 62));
+        txtLicencia.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtLicencia.setForeground(new java.awt.Color(255, 255, 255));
+        txtLicencia.setBorder(null);
+        txtLicencia.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtLicencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEquipajeActionPerformed(evt);
+                txtLicenciaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtEquipaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, 30));
+        jPanel2.add(txtLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, 30));
 
         jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 150, 10));
@@ -210,32 +217,69 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel10.setText("Experiencia");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
-        txtApellido1.setBackground(new java.awt.Color(33, 45, 62));
-        txtApellido1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtApellido1.setForeground(new java.awt.Color(255, 255, 255));
-        txtApellido1.setBorder(null);
-        txtApellido1.setCaretColor(new java.awt.Color(255, 255, 255));
-        jPanel2.add(txtApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 150, -1));
+        txtEmail.setBackground(new java.awt.Color(33, 45, 62));
+        txtEmail.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setBorder(null);
+        txtEmail.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 150, -1));
 
         jSeparator8.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 150, 10));
+        jPanel2.add(SpinnerExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 150, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(33, 45, 62));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Año", "2 Años", "3 Anos", "4 Años" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, -1, -1));
+        BtnVolver.setBackground(new java.awt.Color(73, 181, 172));
+        BtnVolver.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVolver.setText("x");
+        BtnVolver.setBorder(null);
+        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVolverActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 0, 30, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 650, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
-       
-    }//GEN-LAST:event_BtnGuardarClienteActionPerformed
+    private void BtnGuardarConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarConductorActionPerformed
 
-    private void txtEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEquipajeActionPerformed
+        if (contador < listaConductor.length) {
+            String cedula = txtCedula.getText();
+            String nombre = txtNombre.getText();
+            String apellido = txtApellido.getText();
+            String email = txtCodigo.getText();
+            String telefono = txtTelefono.getText();
+            int codigoEmpresa = Integer.parseInt(txtCodigo.getText());
+            String licencia = txtLicencia.getText();
+            int expreriencia = Integer.parseInt(SpinnerExp.getValue().toString());
+
+            Conductor objConductor = new Conductor(expreriencia, licencia, codigoEmpresa, cedula, nombre, apellido, telefono, email);
+
+            listaConductor[contador] = objConductor;
+            contador++;
+
+            JOptionPane.showMessageDialog(this, "Te Has Registrado Con Exito");
+        } else {
+            JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        ViewBuses open = new ViewBuses();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnGuardarConductorActionPerformed
+
+    private void txtLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLicenciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEquipajeActionPerformed
+    }//GEN-LAST:event_txtLicenciaActionPerformed
+
+    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
+        ViewBuses open = new ViewBuses();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,8 +317,9 @@ public class ViewConductor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnGuardarCliente;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton BtnGuardarConductor;
+    private javax.swing.JButton BtnVolver;
+    private javax.swing.JSpinner SpinnerExp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -295,10 +340,10 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtApellido1;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEquipaje;
+    private javax.swing.JTextField txtLicencia;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables

@@ -49,6 +49,7 @@ public class ViewBuses extends javax.swing.JFrame {
         BtnGuardarBus = new javax.swing.JButton();
         btnOpcion3 = new javax.swing.JButton();
         btnOpcion1 = new javax.swing.JButton();
+        BtnGuardarBus1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,7 +136,7 @@ public class ViewBuses extends javax.swing.JFrame {
                 BtnGuardarBusActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 99, 34));
+        jPanel2.add(BtnGuardarBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 99, 34));
 
         btnOpcion3.setBackground(new java.awt.Color(73, 181, 172));
         btnOpcion3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -160,6 +161,18 @@ public class ViewBuses extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnOpcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 99, 34));
+
+        BtnGuardarBus1.setBackground(new java.awt.Color(73, 181, 172));
+        BtnGuardarBus1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnGuardarBus1.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGuardarBus1.setText("x");
+        BtnGuardarBus1.setBorder(null);
+        BtnGuardarBus1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarBus1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnGuardarBus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 30, 34));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 450, 480));
 
@@ -256,6 +269,9 @@ public class ViewBuses extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
+         ViewConductor open = new ViewConductor();
+        open.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarBusActionPerformed
 
     private void btnOpcion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion3ActionPerformed
@@ -295,6 +311,12 @@ public class ViewBuses extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jrbOpcion1ActionPerformed
 
+    private void BtnGuardarBus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBus1ActionPerformed
+       ViewEmpresa open = new ViewEmpresa();
+        open.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BtnGuardarBus1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -332,6 +354,7 @@ public class ViewBuses extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardarBus;
+    private javax.swing.JButton BtnGuardarBus1;
     private javax.swing.JButton btnOpcion1;
     private javax.swing.JButton btnOpcion2;
     private javax.swing.JButton btnOpcion3;
