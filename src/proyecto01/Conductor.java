@@ -7,7 +7,7 @@ package proyecto01;
  */
 public class Conductor extends Persona{
     
-    private String NumeroLicencia;
+    private int NumeroLicencia;
     private String Experiencia;
     private int CodigoEmpresa;
     
@@ -22,14 +22,14 @@ public class Conductor extends Persona{
     /**
      * @return the NumeroLicencia
      */
-    public String getNumeroLicencia() {
+    public int getNumeroLicencia() {
         return NumeroLicencia;
     }
 
     /**
      * @param NumeroLicencia the NumeroLicencia to set
      */
-    public void setNumeroLicencia(String NumeroLicencia) {
+    public void setNumeroLicencia(int NumeroLicencia) {
         this.NumeroLicencia = NumeroLicencia;
     }
 
@@ -50,14 +50,14 @@ public class Conductor extends Persona{
     /**
      * @return the CodigoEmpresa
      */
-    public String getCodigoEmpresa() {
+    public int getCodigoEmpresa() {
         return CodigoEmpresa;
     }
 
     /**
      * @param CodigoEmpresa the CodigoEmpresa to set
      */
-    public void setCodigoEmpresa(String CodigoEmpresa) {
+    public void setCodigoEmpresa(int CodigoEmpresa) {
         this.CodigoEmpresa = CodigoEmpresa;
     }
     

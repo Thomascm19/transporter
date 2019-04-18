@@ -37,7 +37,6 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -53,15 +52,16 @@ public class ViewConductor extends javax.swing.JFrame {
         txtApellido = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtLicencia = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         SpinnerExp = new javax.swing.JSpinner();
         BtnVolver = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        txtLicencia = new javax.swing.JTextField();
+        jSeparator10 = new javax.swing.JSeparator();
+        txtCedula = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,11 +82,11 @@ public class ViewConductor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 520));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 440));
 
         jPanel2.setBackground(new java.awt.Color(33, 45, 62));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,18 +97,6 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cedula");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 112, -1, -1));
-
-        txtCedula.setBackground(new java.awt.Color(33, 45, 62));
-        txtCedula.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtCedula.setForeground(new java.awt.Color(255, 255, 255));
-        txtCedula.setBorder(null);
-        txtCedula.setCaretColor(new java.awt.Color(255, 255, 255));
-        txtCedula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,8 +112,8 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Email");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
+        jLabel4.setText("Experiencia");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
         txtCodigo.setBackground(new java.awt.Color(33, 45, 62));
         txtCodigo.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -170,12 +158,12 @@ public class ViewConductor extends javax.swing.JFrame {
                 BtnGuardarConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 99, 30));
+        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 99, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Apellido");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        jLabel6.setText("Numero De Licencia");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
 
         txtApellido.setBackground(new java.awt.Color(33, 45, 62));
         txtApellido.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -192,33 +180,8 @@ public class ViewConductor extends javax.swing.JFrame {
         jLabel7.setText("Telefono");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Numero De Licencia");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
-
-        txtLicencia.setBackground(new java.awt.Color(33, 45, 62));
-        txtLicencia.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        txtLicencia.setForeground(new java.awt.Color(255, 255, 255));
-        txtLicencia.setBorder(null);
-        txtLicencia.setCaretColor(new java.awt.Color(255, 255, 255));
-        txtLicencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLicenciaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, 30));
-
-        jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, 150, 10));
-
         jSeparator7.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 150, 10));
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Experiencia");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         txtEmail.setBackground(new java.awt.Color(33, 45, 62));
         txtEmail.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -229,7 +192,7 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jSeparator8.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 150, 10));
-        jPanel2.add(SpinnerExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 150, -1));
+        jPanel2.add(SpinnerExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 150, -1));
 
         BtnVolver.setBackground(new java.awt.Color(73, 181, 172));
         BtnVolver.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -243,7 +206,34 @@ public class ViewConductor extends javax.swing.JFrame {
         });
         jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 0, 30, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 650, 560));
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Email");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Apellido");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+
+        txtLicencia.setBackground(new java.awt.Color(33, 45, 62));
+        txtLicencia.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtLicencia.setForeground(new java.awt.Color(255, 255, 255));
+        txtLicencia.setBorder(null);
+        txtLicencia.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtLicencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 150, -1));
+
+        jSeparator10.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 150, 10));
+
+        txtCedula.setBackground(new java.awt.Color(33, 45, 62));
+        txtCedula.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtCedula.setForeground(new java.awt.Color(255, 255, 255));
+        txtCedula.setBorder(null);
+        txtCedula.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 650, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,10 +263,6 @@ public class ViewConductor extends javax.swing.JFrame {
         open.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarConductorActionPerformed
-
-    private void txtLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLicenciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLicenciaActionPerformed
 
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
         ViewBuses open = new ViewBuses();
@@ -332,8 +318,8 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JButton BtnVolver;
     private javax.swing.JSpinner SpinnerExp;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -341,24 +327,21 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLicencia;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNumeroLicencia;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
