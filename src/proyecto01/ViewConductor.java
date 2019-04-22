@@ -158,7 +158,7 @@ public class ViewConductor extends javax.swing.JFrame {
                 BtnGuardarConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 99, 30));
+        jPanel2.add(BtnGuardarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 99, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,7 +204,7 @@ public class ViewConductor extends javax.swing.JFrame {
                 BtnVolverActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 0, 30, 30));
+        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 30, 30));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));

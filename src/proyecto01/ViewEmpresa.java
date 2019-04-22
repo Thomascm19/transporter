@@ -44,7 +44,7 @@ public class ViewEmpresa extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         BtnGuardarEmpresa = new javax.swing.JButton();
-        BtnGuardarEmpresa1 = new javax.swing.JButton();
+        BtnVolver = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -145,17 +145,17 @@ public class ViewEmpresa extends javax.swing.JFrame {
         });
         jPanel2.add(BtnGuardarEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 99, 34));
 
-        BtnGuardarEmpresa1.setBackground(new java.awt.Color(73, 181, 172));
-        BtnGuardarEmpresa1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnGuardarEmpresa1.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGuardarEmpresa1.setText("x");
-        BtnGuardarEmpresa1.setBorder(null);
-        BtnGuardarEmpresa1.addActionListener(new java.awt.event.ActionListener() {
+        BtnVolver.setBackground(new java.awt.Color(73, 181, 172));
+        BtnVolver.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVolver.setText("x");
+        BtnVolver.setBorder(null);
+        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnGuardarEmpresa1ActionPerformed(evt);
+                BtnVolverActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnGuardarEmpresa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 30, 34));
+        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 30, 34));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 400, 470));
 
@@ -226,11 +226,11 @@ public class ViewEmpresa extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarEmpresaActionPerformed
 
-    private void BtnGuardarEmpresa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarEmpresa1ActionPerformed
+    private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
         ViewPrincipal open = new ViewPrincipal();
         open.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BtnGuardarEmpresa1ActionPerformed
+    }//GEN-LAST:event_BtnVolverActionPerformed
 
     /*
     Codigo para buscar 
@@ -289,7 +289,7 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGuardarEmpresa;
-    private javax.swing.JButton BtnGuardarEmpresa1;
+    private javax.swing.JButton BtnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

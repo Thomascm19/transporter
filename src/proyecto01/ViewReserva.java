@@ -3,11 +3,6 @@ package proyecto01;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author thoma
@@ -51,7 +46,7 @@ public class ViewReserva extends javax.swing.JFrame {
         SpinnerSillas = new javax.swing.JSpinner();
         jDateReserva = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
-        BtbReserva1 = new javax.swing.JButton();
+        BtbBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -155,17 +150,17 @@ public class ViewReserva extends javax.swing.JFrame {
         jLabel4.setText("Seleccione Su N° De Silla");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
-        BtbReserva1.setBackground(new java.awt.Color(73, 181, 172));
-        BtbReserva1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtbReserva1.setForeground(new java.awt.Color(255, 255, 255));
-        BtbReserva1.setText("BUSCAR RESERVA");
-        BtbReserva1.setBorder(null);
-        BtbReserva1.addActionListener(new java.awt.event.ActionListener() {
+        BtbBuscar.setBackground(new java.awt.Color(73, 181, 172));
+        BtbBuscar.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtbBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        BtbBuscar.setText("BUSCAR RESERVA");
+        BtbBuscar.setBorder(null);
+        BtbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtbReserva1ActionPerformed(evt);
+                BtbBuscarActionPerformed(evt);
             }
         });
-        jPanel2.add(BtbReserva1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 120, 30));
+        jPanel2.add(BtbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,12 +226,12 @@ public class ViewReserva extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnVolverCompraActionPerformed
 
-    private void BtbReserva1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtbReserva1ActionPerformed
+    private void BtbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtbBuscarActionPerformed
 
         boolean existe = false;
         String buscar = JOptionPane.showInputDialog(this, "Ingrese La Cedula: ");
 
-        for (int i = 0; i < listaReserva.length; i++) {
+        for (int i = 0; i <= listaReserva.length; i++) {
             if (listaReserva[i].getCedula().equals((buscar))) {
                 JOptionPane.showMessageDialog(this, "La Informacion De la Rerserva Es:"+ "\n" + "Cedula: " + listaReserva[i].getCedula() 
                                                    + "\n" + "Fecha De Compra: " + listaReserva[i].getFechaCompra()
@@ -250,7 +245,7 @@ public class ViewReserva extends javax.swing.JFrame {
         if (!existe) {
             JOptionPane.showMessageDialog(this, "No Se Encontro Reserva Registrada Con Cedula "+ buscar);
         }
-    }//GEN-LAST:event_BtbReserva1ActionPerformed
+    }//GEN-LAST:event_BtbBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,8 +284,8 @@ public class ViewReserva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtbBuscar;
     private javax.swing.JButton BtbReserva;
-    private javax.swing.JButton BtbReserva1;
     private javax.swing.JSpinner SpinnerSillas;
     private javax.swing.JButton btnVolverCompra;
     private com.toedter.calendar.JDateChooser jDateCompra;
