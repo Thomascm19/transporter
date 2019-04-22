@@ -75,7 +75,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cedula");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         txtCedula.setBackground(new java.awt.Color(33, 45, 62));
         txtCedula.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -87,7 +87,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
 
         txtNombre.setBackground(new java.awt.Color(33, 45, 62));
         txtNombre.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -149,7 +149,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Apellido");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
 
         txtApellido.setBackground(new java.awt.Color(33, 45, 62));
         txtApellido.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
