@@ -269,7 +269,7 @@ public class ViewBuses extends javax.swing.JFrame {
         }else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
-         ViewConductor open = new ViewConductor();
+         ViewConductor open = new ViewConductor(txtPlaca.getText());
         open.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnGuardarBusActionPerformed

@@ -17,9 +17,10 @@ public class ViewConductor extends javax.swing.JFrame {
 
     int contador;
 
-    public ViewConductor() {
+    public ViewConductor(String placa) {
         initComponents();
 
+        txtLicencia.setText(placa);
         listaConductor = new Conductor[10];
         contador = 0;
     }
@@ -308,7 +309,7 @@ public class ViewConductor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewConductor().setVisible(true);
+                new ViewConductor("").setVisible(true);
             }
         });
     }
