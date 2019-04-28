@@ -3,11 +3,11 @@ package proyecto01;
 import javax.swing.JOptionPane;
 
 public class ViewEmpresa extends javax.swing.JFrame {
-
+    
     Empresa[] listaEmpresa;
-
+    
     int contador;
-
+    
     public ViewEmpresa() {
         initComponents();
 
@@ -164,59 +164,18 @@ public class ViewEmpresa extends javax.swing.JFrame {
 
     private void BtnGuardarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarEmpresaActionPerformed
         if (contador < listaEmpresa.length) {
-             //Se crea el objeto
-            Empresa objEmpresa = new Empresa() {
+            
+            String nit = txtNit.getText();
+            String nombre = txtNombre.getText();
+            String direccion = txtDireccion.getText();
+            String telefono = txtTelefono.getText();
 
-                String nit = txtNit.getText();
-                String nombre = txtNombre.getText();
-                String direccion = txtDireccion.getText();
-                String telefono = txtTelefono.getText();
-
-               
-                @Override
-                public void setNit(String nit) {
-                    this.nit = nit;
-                }
-
-                @Override
-                public String getNit() {
-                    return this.nit;
-                }
-
-                @Override
-                public void setNombre(String nombre) {
-                    this.nombre = nombre;
-                }
-
-                @Override
-                public String getNombre() {
-                    return this.nombre;
-                }
-
-                @Override
-                public void setDireccion(String direccion) {
-                    this.direccion = direccion;
-                }
-
-                @Override
-                public String getDireccion() {
-                    return this.direccion;
-                }
-
-                @Override
-                public void setTelefono(String telefono) {
-                    this.telefono = telefono;
-                }
-
-                @Override
-                public String getTelefono() {
-                    return this.telefono;
-                }
-            };
-
+            //Se crea el objeto
+            Empresa objEmpresa = new Empresa(nit, nombre, direccion, telefono);            
+            
             listaEmpresa[contador] = objEmpresa;
             contador++;
-
+            
             JOptionPane.showMessageDialog(this, "Empresa Agregada Con Exito");
         } else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
@@ -233,24 +192,22 @@ public class ViewEmpresa extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnVolverActionPerformed
 
     /*
-    Codigo para buscar 
-        boolean existe = false;
-        String buscar = JOptionPane.showInputDialog(this, "Ingrese el nit: ");
+     Codigo para buscar 
+     boolean existe = false;
+     String buscar = JOptionPane.showInputDialog(this, "Ingrese el nit: ");
 
-        for (int i = 0; i <= listaEmpresa.length; i++) {
-            if (listaEmpresa[i].getNit().equals((buscar))) {
-                JOptionPane.showMessageDialog(this, "El nit es " + listaEmpresa[i].getNit());
+     for (int i = 0; i <= listaEmpresa.length; i++) {
+     if (listaEmpresa[i].getNit().equals((buscar))) {
+     JOptionPane.showMessageDialog(this, "El nit es " + listaEmpresa[i].getNit());
 
-                existe = true;
-            }
-        }
-        if (!existe) {
-            JOptionPane.showMessageDialog(this, "No se encontro la placa");
-        }
+     existe = true;
+     }
+     }
+     if (!existe) {
+     JOptionPane.showMessageDialog(this, "No se encontro la placa");
+     }
     
-    */
-    
-    
+     */
     /**
      * @param args the command line arguments
      */

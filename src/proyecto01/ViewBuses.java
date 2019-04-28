@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 public class ViewBuses extends javax.swing.JFrame {
 
-    Buses[] listaBuses;
+    Bus[] listaBuses;
     int contador;
     int[][] distribucionSillas1 = new int[2][8];
     int[][] distribucionSillas2 = new int[2][10];
@@ -18,7 +18,7 @@ public class ViewBuses extends javax.swing.JFrame {
         initComponents();
 
         //Se inicializa el arrelo
-        listaBuses = new Buses[10];
+        listaBuses = new Bus[10];
         //Se inicializa el cotador 
         contador = 0;
 
@@ -108,6 +108,7 @@ public class ViewBuses extends javax.swing.JFrame {
 
         jrbOpcion1.setBackground(new java.awt.Color(33, 45, 62));
         buttonGroup1.add(jrbOpcion1);
+        jrbOpcion1.setForeground(new java.awt.Color(255, 255, 255));
         jrbOpcion1.setText("MicroBus");
         jrbOpcion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,11 +119,13 @@ public class ViewBuses extends javax.swing.JFrame {
 
         jrbOpcion2.setBackground(new java.awt.Color(33, 45, 62));
         buttonGroup1.add(jrbOpcion2);
+        jrbOpcion2.setForeground(new java.awt.Color(255, 255, 255));
         jrbOpcion2.setText("Buseta");
         jPanel2.add(jrbOpcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
 
         jrbOpcion3.setBackground(new java.awt.Color(33, 45, 62));
         buttonGroup1.add(jrbOpcion3);
+        jrbOpcion3.setForeground(new java.awt.Color(255, 255, 255));
         jrbOpcion3.setText("AutoBus");
         jPanel2.add(jrbOpcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
@@ -189,72 +192,13 @@ public class ViewBuses extends javax.swing.JFrame {
     private void BtnGuardarBusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarBusActionPerformed
 
         if (contador < listaBuses.length) {
-
+            String placa = txtPlaca.getText();
+            int distribucionSillas[][] = null;
+            
+            
             //Se crea el objeto
-            Buses objBuses = new Buses() {
-                String placa = txtPlaca.getText();
-                int distribucionSillas[][];
-
-                @Override
-                public void setPlaca(String placa) {
-                    this.placa = placa;
-                }
-
-                @Override
-                public String getPlaca() {
-                    return this.placa;
-                }
-
-                @Override
-                public void setDistribucionSillas(int[][] distribucionSillas) {
-                    this.distribucionSillas = distribucionSillas;
-                }
-
-                @Override
-                public int[][] getDistribucionSillas() {
-                    return this.distribucionSillas;
-                }
-
-                @Override
-                public void setNit(String nit) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public String getNit() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public void setNombre(String nombre) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public String getNombre() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public void setDireccion(String direccion) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public String getDireccion() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public void setTelefono(String telefono) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-
-                @Override
-                public String getTelefono() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
+            Bus objBuses = new Bus(placa, distribucionSillas);
+                    
             if (jrbOpcion1.isSelected()) {
                 objBuses.setDistribucionSillas(distribucionSillas1);
             } else if (jrbOpcion2.isSelected()) {
@@ -264,14 +208,16 @@ public class ViewBuses extends javax.swing.JFrame {
             }
             listaBuses[contador] = objBuses;
             contador++;
-            
-            JOptionPane.showMessageDialog(this, "Transporte Agregado Con Exito");            
-        }else {
+
+            JOptionPane.showMessageDialog(this, "Transporte Agregado Con Exito");
+        } else {
             JOptionPane.showMessageDialog(this, "Error", "Error", JOptionPane.ERROR_MESSAGE);
         }
-         ViewConductor open = new ViewConductor(txtPlaca.getText());
+        
+        ViewConductor open = new ViewConductor(txtPlaca.getText());
         open.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_BtnGuardarBusActionPerformed
 
     private void btnOpcion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcion3ActionPerformed
@@ -290,29 +236,29 @@ public class ViewBuses extends javax.swing.JFrame {
 
     /*
     
-    Boton de busqueda
-   boolean existe = false;
-        String buscar = JOptionPane.showInputDialog(this, "Ingrese la placa: ");
+     Boton de busqueda
+     boolean existe = false;
+     String buscar = JOptionPane.showInputDialog(this, "Ingrese la placa: ");
 
-        for (int i = 0; i <= listaBuses.length; i++) {
-            if (listaBuses[i].getPlaca().equals((buscar))) {
-                JOptionPane.showMessageDialog(this, "La placa es: " + listaBuses[i].getDistribucionSillas());
+     for (int i = 0; i <= listaBuses.length; i++) {
+     if (listaBuses[i].getPlaca().equals((buscar))) {
+     JOptionPane.showMessageDialog(this, "La placa es: " + listaBuses[i].getDistribucionSillas());
 
-                existe = true;
-            }
-        }
-        if (!existe) {
-            JOptionPane.showMessageDialog(this, "No se encontro la placa");
-        } 
+     existe = true;
+     }
+     }
+     if (!existe) {
+     JOptionPane.showMessageDialog(this, "No se encontro la placa");
+     } 
     
    
-    */
+     */
     private void jrbOpcion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbOpcion1ActionPerformed
 
     }//GEN-LAST:event_jrbOpcion1ActionPerformed
 
     private void BtnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVolverActionPerformed
-       ViewEmpresa open = new ViewEmpresa();
+        ViewEmpresa open = new ViewEmpresa();
         open.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BtnVolverActionPerformed

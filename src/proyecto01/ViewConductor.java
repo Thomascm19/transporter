@@ -20,10 +20,11 @@ public class ViewConductor extends javax.swing.JFrame {
     public ViewConductor(String placa) {
         initComponents();
 
-        txtLicencia.setText(placa);
+        txtPlaca.setText(placa);
         listaConductor = new Conductor[10];
         contador = 0;
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,12 +58,15 @@ public class ViewConductor extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         SpinnerExp = new javax.swing.JSpinner();
-        BtnVolver = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtLicencia = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         txtCedula = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtPlaca = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        BtnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,8 +129,8 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Codigo Empresa");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        jLabel5.setText("Placa Del Transporte");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, -1, -1));
 
         txtTelefono.setBackground(new java.awt.Color(33, 45, 62));
         txtTelefono.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -193,19 +197,7 @@ public class ViewConductor extends javax.swing.JFrame {
 
         jSeparator8.setBackground(new java.awt.Color(73, 181, 172));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 150, 10));
-        jPanel2.add(SpinnerExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 150, -1));
-
-        BtnVolver.setBackground(new java.awt.Color(73, 181, 172));
-        BtnVolver.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
-        BtnVolver.setText("x");
-        BtnVolver.setBorder(null);
-        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnVolverActionPerformed(evt);
-            }
-        });
-        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 30, 30));
+        jPanel2.add(SpinnerExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 150, -1));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,7 +226,34 @@ public class ViewConductor extends javax.swing.JFrame {
         txtCedula.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 650, 470));
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Codigo Empresa");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+
+        txtPlaca.setBackground(new java.awt.Color(33, 45, 62));
+        txtPlaca.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        txtPlaca.setForeground(new java.awt.Color(255, 255, 255));
+        txtPlaca.setBorder(null);
+        txtPlaca.setCaretColor(new java.awt.Color(255, 255, 255));
+        jPanel2.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 150, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 150, 10));
+
+        BtnVolver.setBackground(new java.awt.Color(73, 181, 172));
+        BtnVolver.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVolver.setText("x");
+        BtnVolver.setBorder(null);
+        BtnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVolverActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BtnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 30, 30));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, -30, 770, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -328,12 +347,14 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
@@ -343,6 +364,7 @@ public class ViewConductor extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtLicencia;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
